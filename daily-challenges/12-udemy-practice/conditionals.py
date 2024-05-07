@@ -12,3 +12,19 @@ is_user = True
 
 if is_friend or is_user:
   print("we friends forever!")
+
+# Magician exercise
+# and not
+is_magician = False
+is_expert = True
+
+if not is_magician:
+  print('You need magic powers')
+
+elif is_magician and is_expert:
+  print('you are a master magician')
+
+else:
+  print('at least you are getting there')
+
+
