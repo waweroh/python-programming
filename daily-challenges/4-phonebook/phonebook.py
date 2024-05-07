@@ -16,8 +16,9 @@ while True:
 
     elif option == 2:
         del_contact = input("Enter contact to be deleted:")
-        if del_contact == contact:
+        if del_contact in contact:
             contact.pop(del_contact)
+        display_contact(contact)
 
     elif option == 3:
         search_name = input("Enter the search name: ")

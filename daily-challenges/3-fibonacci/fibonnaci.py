@@ -15,6 +15,6 @@ x = int(input("Number (x):"))
 fib_seq = fibonacci_nums(x)
 print(f"Fibonacci numbers between 0 and {x} are: {fib_seq}")
 
-# if __name__ == "__main__":
-#     fibonacci_nums(x)
+if __name__ == "__main__":
+    fibonacci_nums(x)
     

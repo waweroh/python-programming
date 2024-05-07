@@ -33,12 +33,3 @@ print(replace_email_addresses(string, "rickyk@gmail.com"))
 
 
 
-# import re
-
-# string = "Python is a popular programming language. Some people like Python, while others prefer Java."
-# pattern = r"python"
-
-# matches = re.finditer(pattern, string, flags=re.IGNORECASE)
-
-# for match in matches:
-#     print(f"Match found at position {match.start()}: {match.group()}")
