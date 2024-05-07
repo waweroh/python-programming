@@ -9,5 +9,6 @@ print(can_message)
 is_Friend = False
 is_user = True
 
+
 if is_friend or is_user:
   print("we friends forever!")
