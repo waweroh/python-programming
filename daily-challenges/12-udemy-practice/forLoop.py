@@ -36,3 +36,12 @@ for item in my_list:
   counter += item
   #print(counter) # this will print as many time as there are items since it's in the loop
 print(counter) # this will print the total of counter
+
+# Range - is another iterable 
+print (range(0, 10)) # range(0, 10)
+
+for number in range(0, 10, 2):#start,stop,stepover. We looped thru the range 10 times
+  print('swimmer paradise') # print 0-9
+
+for _ in range(10, 0, -2):
+  print (list (range(10)))
