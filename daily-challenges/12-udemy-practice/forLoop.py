@@ -28,3 +28,11 @@ for item in user.keys():
 for item in user.values():
   print(item)
 
+#  counter exercise
+my_list = [1,2,3,4,5,6,7,8,9,10]
+counter =  0 # will give the summation 0 being the start of the counter
+for item in my_list:
+  #counter = 0 #putting counter inside loop will count n.o of items in the list
+  counter += item
+  #print(counter) # this will print as many time as there are items since it's in the loop
+print(counter) # this will print the total of counter
