@@ -38,10 +38,26 @@ for item in my_list:
 print(counter) # this will print the total of counter
 
 # Range - is another iterable 
-print (range(0, 10)) # range(0, 10)
+print (range(10)) # range(0, 10)
 
 for number in range(0, 10, 2):#start,stop,stepover. We looped thru the range 10 times
-  print('swimmer paradise') # print 0-9
+  print('success') # print 0-9
+
+# how to print numbers in a range
+for number in range(0, 10):
+  print(number)
 
 for _ in range(10, 0, -2):
   print (list (range(10)))
+
+
+#enumerate - works with iteratables
+for i, char in enumerate('kindness'): #index, character of iterable
+  print (i,char)
+
+for i,char in enumerate(list(range(10))):
+  print (i,char)
+  if char == 5:
+    print({f'the index of 5 is {i})'})
+    
+
