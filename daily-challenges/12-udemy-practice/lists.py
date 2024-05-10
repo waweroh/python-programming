@@ -44,6 +44,6 @@ duplicates = [] # initialize empty list to store duplicates
 for value in some_list:
   if some_list.count(value) > 1: #if value appears multiple times
     if value not in duplicates: # if value occurs multiple times is not in the list add
-                                #it if there dont add this prevents adding duplicates more than once
+                                #it if there dont add, this prevents adding duplicates more than once
       duplicates.append(value)# add the value to the duplicate list
 print(duplicates)
