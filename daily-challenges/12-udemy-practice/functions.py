@@ -64,4 +64,20 @@ def super_func(*args, **kwargs):
 
 print(super_func(1,2,3,4,5, num1=5, num2=10)) #print sum
 
+#Rules of passing parameters in order of priority: param, *args, default params, **kwargs
+
+#Scope
+a = 1 
+def confusion():
+  a=5
+  return a
+
+print(confusion())
+print(a)
+#1. start with local
+#2. parent local/ the top function
+#3. global ie  a = 1 whatever is the files scope
+
+
+
 
