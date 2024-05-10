@@ -20,26 +20,48 @@
 # total = sum(10,59)
 # print(total)
 
-#1. Wrap the above code in a function called checkDriverAge(). Whenever you call this function, you will get prompted for age. 
-# Notice the benefit in having checkDriverAge() instead of copying and pasting the function everytime?
+# #1. Wrap the above code in a function called checkDriverAge(). Whenever you call this function, you will get prompted for age. 
+# # Notice the benefit in having checkDriverAge() instead of copying and pasting the function everytime?
 
-#2 Instead of using the input(). Now, make the checkDriverAge() function accept an argument of age, so that if you enter:
-#checkDriverAge(92);
-#it returns "Powering On. Enjoy the ride!"
-#also make it so that the default age is set to 0 if no argument is given.
+# #2 Instead of using the input(). Now, make the checkDriverAge() function accept an argument of age, so that if you enter:
+# #checkDriverAge(92);
+# #it returns "Powering On. Enjoy the ride!"
+# #also make it so that the default age is set to 0 if no argument is given.
 
-def checkDriverAge(age=0):
-  if int(age) < 18:
-    print("Sorry, you are too young to drive this car. Powering off")
-  elif int(age) > 18:
-    print("Powering On. Enjoy the ride!");
-  elif int(age) == 18:
-    print("Congratulations on your first year of driving. Enjoy the ride!")
+# def checkDriverAge(age=0):
+#   if int(age) < 18:
+#     print("Sorry, you are too young to drive this car. Powering off")
+#   elif int(age) > 18:
+#     print("Powering On. Enjoy the ride!");
+#   elif int(age) == 18:
+#     print("Congratulations on your first year of driving. Enjoy the ride!")
 
-  return(age)   
-checkDriverAge()
-checkDriverAge(18)
-checkDriverAge(35)
-checkDriverAge(3)
+#   return(age)   
+# checkDriverAge()
+# checkDriverAge(18)
+# checkDriverAge(35)
+# checkDriverAge(3)
+
+# *args and **kwargs
+# *args- Positional Arguments.When you use *args, it collects all the positional arguments into a tuple.
+def super_func(*args):
+  print(*args) #prints the arguments
+  print(args) #prints the arguments in a tuple
+  return sum(args) # returns the sum of the tuple
+
+print(super_func(1,2,3,4,5)) #print sum
+
+#kwargs- (Keyword Arguments.It collects all the keyword arguments into a dictionary where
+          #the keys are the argument names and the values are the argument values.
+def super_func(*args, **kwargs):
+  print(*kwargs) #prints the arguments
+  print(kwargs) #prints the arguments in a dictionary
+  total = 0
+  for items in kwargs.values():
+    total += items #adds total=0 and the items in the dict being iterated over by the loop
+
+  return sum(args) + total # returns the sum of the tuple and dictionary values
+
+print(super_func(1,2,3,4,5, num1=5, num2=10)) #print sum
 
 
