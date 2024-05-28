@@ -38,6 +38,43 @@ print(player2.age)
 print(player1.shout())
 print(player2.attack)
 
+#Given the below class:
+class Cat:
+    species = 'mammal'
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+# 1 Instantiate the Cat object with 3 cats
+cat1 = Cat('dan', 10)
+cat2 = Cat('amy', 13)
+cat3 = Cat('nina', 4)
+
+
+
+
+
+# 2 Create a function that finds the oldest cat
+'''
+1.  Sorting with Lambda: small anonymous function without def keyword
+
+    You can use a lambda function as the key for sorting a
+    list of tuples by the second element:
+*args- prints positional arguments into a tuple in this case a list of tuples since
+       we have 3 cat objects 
+'''
+def oldest_cat(*args):
+    oldest = max(args, key=lambda cat: cat.age)
+    return oldest
+   
+
+
+thatOld_cat = oldest_cat(cat1, cat2, cat3)
+
+# 3 Print out: "The oldest cat is x years old.". x will be the oldest cat age by using the function in #2
+print(f'Oldest cat is {thatOld_cat.name} who is {thatOld_cat.age} years old.')
+
 
   
   
