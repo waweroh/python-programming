@@ -25,9 +25,15 @@ class Shaolin_archer(User):# user class inherited in archer class
   def attack(self):
     print(f'attacking with {self.num_arrows} arrows left')
 
+
+
 grandmaster1 = Grandmaster('Master Wong', 88)
 archer1 = Shaolin_archer('Lu', 24)
 print(grandmaster1.sign_in()) #inheritance of user in grandmaster class
 archer1.sign_in() #inheritance of user in archer class
 grandmaster1.attack()
 archer1.attack()
+
+#isinstance
+print(isinstance(grandmaster1,User)) # check if grandmaster1 is an instance of user
+print(isinstance(User, object)) # check if user is an instance of object(obj base class of py )
