@@ -38,3 +38,7 @@ archer1.attack() #polymorphism
 print (grandmaster1.email)
 print (archer1.email)
 
+#introspection
+print(dir(grandmaster1))
+print(help(max))
+
