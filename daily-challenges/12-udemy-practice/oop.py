@@ -49,9 +49,6 @@ class PlayerCharacter:
   def adding_things2( num1, num2):
     return num1 + num2
 
-
-    
-
 player1 = PlayerCharacter('moses', 144)
 player2 = PlayerCharacter('stephen', 56)
 player2.attack = 50 # You can now assign methods to the instances
@@ -79,10 +76,6 @@ cat1 = Cat('dan', 10)
 cat2 = Cat('amy', 13)
 cat3 = Cat('nina', 4)
 
-
-
-
-
 # 2 Create a function that finds the oldest cat
 '''
 1.  Sorting with Lambda: small anonymous function without def keyword
@@ -102,6 +95,8 @@ thatOld_cat = oldest_cat(cat1, cat2, cat3)
 
 # 3 Print out: "The oldest cat is x years old.". x will be the oldest cat age by using the function in #2
 print(f'Oldest cat is {thatOld_cat.name} who is {thatOld_cat.age} years old.')
+
+
 
 
   
