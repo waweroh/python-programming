@@ -5,11 +5,8 @@ Inheritance - allows a class to inherit attributes and methods from another clas
 
 '''
 
-class User: #PARENT CLASS
-  def sign_in(self):
-    print('logged in')
 
-class Grandmaster(User):# user class inherited in Grandmaster class
+class Grandmaster():# user class inherited in Grandmaster class
   def __init__(self, name, power):
     self.name = name
     self.power = power
@@ -17,23 +14,21 @@ class Grandmaster(User):# user class inherited in Grandmaster class
   def attack(self):
     print(f'attacking with a power of {self.power} ')
 
-class Shaolin_archer(User):# user class inherited in archer class
+class Shaolin_archer():# user class inherited in archer class
   def __init__(self, name, num_arrows):
     self.name = name
     self.num_arrows = num_arrows
 
   def attack(self):
     print(f'attacking with {self.num_arrows} arrows left')
+    
+# MULTIPLE INHERITANCE
+class Grand_specialist(Grandmaster, Shaolin_archer):
+  def __init__(self, name, power, num_arrows):
+    Grandmaster.__init__(self, name, power)
+    Shaolin_archer.__init__(self, name, num_arrows)
 
+grand_spec1 = Grand_specialist('jorge',50,43)
+print(grand_spec1.num_arrows)
+print(grand_spec1.power)
 
-
-grandmaster1 = Grandmaster('Master Wong', 88)
-archer1 = Shaolin_archer('Lu', 24)
-print(grandmaster1.sign_in()) #inheritance of user in grandmaster class
-archer1.sign_in() #inheritance of user in archer class
-grandmaster1.attack()
-archer1.attack()
-
-#isinstance
-print(isinstance(grandmaster1,User)) # check if grandmaster1 is an instance of user
-print(isinstance(User, object)) # check if user is an instance of object(obj base class of py )
