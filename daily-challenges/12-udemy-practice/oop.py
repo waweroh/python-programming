@@ -26,17 +26,43 @@ class PlayerCharacter:
   
   def shout (self):
     print(f'my name is {self.name}, age is {self.age}')
+
+  #class method 
+  '''
+  creates method for the class this methods can be used without instantiating 
+  the class but you can still instantiate it at the return level if need be.
+  They are not used often
+  '''
+  @classmethod
+  def adding_things(cls, num1, num2):
+     return num1 + num2
+  
+
+  #static method
+  '''
+  here we do not have access to the class.We use it when we have no use for class attributes
+
+  '''
+  @staticmethod
+  def adding_things2( num1, num2):
+    return num1 + num2
+
+
     
 
 player1 = PlayerCharacter('moses', 144)
 player2 = PlayerCharacter('stephen', 56)
 player2.attack = 50 # You can now assign methods to the instances
 
+
 print(player1.name)
 print(player1.membership)
 print(player2.age)
 print(player1.shout())
 print(player2.attack)
+print(player2.adding_things2(30,50)) #using staticmethod
+print(player1.adding_things(49,6)) #classmethod
+print(PlayerCharacter.adding_things(34,6)) #classmethod without instantiation
 
 #Given the below class:
 class Cat:
