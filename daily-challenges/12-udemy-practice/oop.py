@@ -8,7 +8,9 @@ print(type(obj1)) #<class '__main__.BigObject'>(instantiation)
 
 #another class
 '''
-  constructor method --is called whenever we instantiate.
+  constructor method --  is a special type of method used to initialize a newly created object. 
+        The primary purpose of the constructor is to set up the initial state of an object by assigning
+        values to its fields. It is called whenever we instantiate.
   When we call init during instantiation we accept what is after
   self as the parameter.
   self --- When you create an object (also known as an instance) from 
@@ -19,7 +21,7 @@ class PlayerCharacter:
   #class object attribute -- it's not dynamic across instances 
   membership = True
 
-  def __init__(self, name, age ): 
+  def __init__(self, name, age ): #parameters
     if (self.membership):
       self.name = name #attributes - dynamic pieces of data across instances
       self.age = age
