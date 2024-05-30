@@ -62,3 +62,20 @@ user2 = user.copy()
 print(user.clear())
 print(user2)
 
+'''
+  Dictionary comprehensions
+    it is a short hand form used instead of using normal for loop and append methods
+
+    syntax: my_dict[param(k:v) for k,v in iterable]
+'''
+simple_dict = {
+  'a': 3,
+  'b': 4
+}
+
+my_dict = {k:v for k,v in simple_dict.items()}
+my_dict1 = {k:v**2 for k,v in simple_dict.items()}
+my_dict2 = {k:v**2 for k,v in simple_dict.items() if v % 2 == 0 }
+print(my_dict)
+print(my_dict1)
+print(my_dict2)
