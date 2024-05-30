@@ -113,6 +113,21 @@ def multiply_by_2(li):
 
 print(multiply_by_2([2,4,6]))
 
+'''
+Map - The map() function in Python is used to apply a given function to each item of an
+      iterable (such as a list, tuple, etc.) and return a map object (which is an iterator)
+      
+      $map specialty$
+It helps in maintain pure functions which don't affect the scope outside them. In this case the 
+iterable outside the func scope though used inside the function remains immutable and is callable.
+'''
+my_list = [1,2,3]
+def multiply_by_3(item):
+  return item*3
+
+print(list(map(multiply_by_3,my_list)))
+print(my_list)
+
 
 
 
