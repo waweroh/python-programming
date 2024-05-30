@@ -188,6 +188,19 @@ def accumulator(acc, item):
 print(reduce(accumulator, your_list, 10 ))
 print(your_list)
 
+'''
+lambda function - is an anonymous function that is syntactically restricted to
+                  to a single expression.
+
+    syntax: lambda param:action(param)
+
+'''
+your2_list = [3,5,7,6,8]
+print(list(map(lambda item: item*2,your2_list)))
+print(list(filter(lambda item: item % 2 !=0, your2_list)))
+print(reduce(lambda acc, item: acc + item, your2_list,))
+
+
 
 
 
