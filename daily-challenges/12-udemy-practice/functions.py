@@ -145,5 +145,23 @@ def only_odd(item):
 print(list(filter(only_odd, d_list)))
 print(d_list)
 
+'''
+Zip - The zip() function in Python is used to combine multiple iterables (e.g., lists, tuples)
+      into a single iterable of tuples. Each tuple contains elements from each of the input iterables,
+      grouped by their position.
+'''
+d_list = [4,6,8,5,7]
+my_list = [1,2,3]
+your_list = [3,5,7]
+def multiply_by_4(item):
+  return item*4
+
+def only_odd(item):
+  return item % 2 != 0
+
+print(list(zip( d_list, my_list, your_list)))
+print(d_list)
+
+
 
 
