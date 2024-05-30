@@ -48,6 +48,10 @@ for value in some_list:
       duplicates.append(value)# add the value to the duplicate list
 print(duplicates)
 
+some_list2 = ['a', 'b', 'c', 'd', 'd', 'b', 'f', 'g', 'a', 'i']
+duplicates = set([value for value in some_list2 if some_list2.count(value) > 1])
+print(duplicates)
+
 '''
 list comprehensions
     it is a short hand form used instead of using normal for loop and append methods
