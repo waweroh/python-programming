@@ -47,3 +47,31 @@ for value in some_list:
                                 #it if there dont add, this prevents adding duplicates more than once
       duplicates.append(value)# add the value to the duplicate list
 print(duplicates)
+
+'''
+list comprehensions
+    it is a short hand form used instead of using normal for loop and append methods
+
+    syntax: my_list[param(mutable) for param in iterable]
+'''
+#instead of
+ 
+my_list = []
+for char in 'hello':
+  my_list.append(char)
+
+print(my_list)
+
+#do list comprehension
+my_list = [char for char in 'hello there']
+my_list1 = [num for num in range(0,100)]
+my_list2 = [num**2 for num in range(0,30)]
+my_list3 = [num**2 for num in range(0,50)if num % 2 ==0]
+
+
+print(my_list)
+print(my_list1)
+print(my_list2)
+print(my_list3)
+
+
