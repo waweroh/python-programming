@@ -13,11 +13,11 @@ say_hello()
 say_hello(name='john')
 
 # function within another function
-def sum(num1, num2):
+def sum1(num1, num2):
   def another_fun(n1, n2):
     return n1 + n2
   return another_fun (num1, num2)
-total = sum(10,59)
+total = sum1(10,59)
 print(total)
 
 #1. Wrap the above code in a function called checkDriverAge(). Whenever you call this function, you will get prompted for age. 
@@ -92,6 +92,26 @@ def highest_even(li):
   return x #should be outside the for loop otherwise returns first item only
 
 print(highest_even([20, 2, 11, 50, 13, 8, 9, 6, 7, 4]))
+
+'''
+FUNCTIONAL PROGRAMMING
+Separation of concerns
+Pure functions - For functional programming we need separation ie separating functions and data of concerns, hence 
+                 the need for pure functions. They have 2 xristics
+                 - given same input they return same output
+                 - the function cannot be altered by outside code ie. maintains 
+                   every thing within it's scope  
+
+'''
+#new_list = [] - having list outside func scope means can be altered in the func hence not pure func
+def multiply_by_2(li):
+  new_list = []
+  for item in li:
+    new_list.append(item*2)
+  return new_list
+
+
+print(multiply_by_2([2,4,6]))
 
 
 
