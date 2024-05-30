@@ -200,7 +200,15 @@ print(list(map(lambda item: item*2,your2_list)))
 print(list(filter(lambda item: item % 2 !=0, your2_list)))
 print(reduce(lambda acc, item: acc + item, your2_list,))
 
+#squaring with lambda
+print (list(map(lambda item: item**2, your2_list)))
 
+#list sorting with lambda
+#sort arranges in an order(alphabetic, ascending order )
+a = [(0,2), (4,3), (9,9), (10, -1)]
+a.sort(key=lambda pair: pair[1])
+print(a)
+print(your2_list)
 
 
 
