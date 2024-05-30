@@ -116,7 +116,7 @@ print(multiply_by_2([2,4,6]))
 '''
 Map - The map() function in Python is used to apply a given function to each item of an
       iterable (such as a list, tuple, etc.) and return a map object (which is an iterator)
-      
+
       $map specialty$
 It helps in maintain pure functions which don't affect the scope outside them. In this case the 
 iterable outside the func scope though used inside the function remains immutable and is callable.
@@ -128,6 +128,22 @@ def multiply_by_3(item):
 print(list(map(multiply_by_3,my_list)))
 print(my_list)
 
+'''
+Filter - The filter() function is used to filter elements in an iterable based on a condition 
+         provided by a function.
+
+Also maintains original form of the iterable
+filter names starting with A
+'''
+d_list = [4,6,8,5,7]
+def multiply_by_4(item):
+  return item*4
+
+def only_odd(item):
+  return item % 2 != 0
+
+print(list(filter(only_odd, d_list)))
+print(d_list)
 
 
 
