@@ -243,4 +243,25 @@ def accumulator(acc, item):
 
 print(reduce(accumulator,(my_numbers + scores)) )
 
+'''
+Decorator 
+A decorator is essentially a higher-order function that takes another function as an argument and returns a new
+function that typically extends or modifies the behavior of the original function.
+
+'''
+def my_decorator(func):
+  def wrap_func():
+    print('*********')
+    func()
+    print('*********')
+  return wrap_func()
+
+@my_decorator
+def hello():
+  print('helllooooo')
+
+def bye():
+  print('see ya latter')
+
+
 
