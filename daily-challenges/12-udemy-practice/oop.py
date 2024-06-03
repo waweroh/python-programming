@@ -48,7 +48,8 @@ class PlayerCharacter:
   @staticmethod
   def adding_things2( num1, num2):
     return num1 + num2
-
+  
+#Instantiation of the PlayerCharacter object.
 player1 = PlayerCharacter('moses', 144)
 player2 = PlayerCharacter('stephen', 56)
 player2.attack = 50 # You can now assign methods to the instances
