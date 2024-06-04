@@ -87,9 +87,9 @@ def highest_even(li):
     if item % 2 == 0:
       evens.append(item)
       print(evens)
-      x = max(evens)
+      #x = max(evens) ---This is bad practice 
 
-  return x #should be outside the for loop otherwise returns first item only
+  return max(evens) #should be outside the for loop otherwise returns first item only
 
 print(highest_even([20, 2, 11, 50, 13, 8, 9, 6, 7, 4]))
 
