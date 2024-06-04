@@ -266,6 +266,25 @@ def hello(greeting, emoji=':)'):
   
 hello('hii there', ':)')
 
+'''
+building a performance decorator showing how long it takes for code to run
+'''
+from time import time
+def performance(fn):
+  def wrapper(*args, **kwargs):
+    t1 = time()
+    results = fn(*args, **kwargs) # the function
+    t2 = time ()
+    print(f'took {t2-t1}')
+    return results
+  return wrapper
+  
+@performance
+def long_time():
+  for i in range(1000008):
+    i*5
+
+long_time()
 
 
 
