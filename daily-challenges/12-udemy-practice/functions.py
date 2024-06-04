@@ -252,18 +252,20 @@ In this case we are enhancing hello function
 
 '''
 def my_decorator(func): #func == hello func
-  def wrap_func():
+  def wrap_func(*args, **kwargs):
     print('*********') # enhancement to the function
-    func() # ==hello func
+    func(*args, **kwargs) # ==hello func
     print('*********') # enhancement to the function
-  return wrap_func()
+  return wrap_func
 
-@my_decorator #super boost a function
-def hello():
-  print('helllooooo')
+@my_decorator # the decorator super boosts the function
+#to allow hello func receive arguments we must modify the decorator with
+#positional and keyword arguments (*args and **kwargs) to unpack the arguments
+def hello(greeting, emoji=':)'):
+  print (greeting, emoji)
+  
+hello('hii there', ':)')
 
-def bye():
-  print('see ya latter')
 
 
 
