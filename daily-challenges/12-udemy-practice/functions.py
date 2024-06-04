@@ -246,17 +246,19 @@ print(reduce(accumulator,(my_numbers + scores)) )
 '''
 Decorator 
 A decorator is essentially a higher-order function that takes another function as an argument and returns a new
-function that typically extends or modifies the behavior of the original function.
+function that typically extends or modifies/enhances the behavior of the original function.
+
+In this case we are enhancing hello function
 
 '''
-def my_decorator(func):
+def my_decorator(func): #func == hello func
   def wrap_func():
-    print('*********')
-    func()
-    print('*********')
+    print('*********') # enhancement to the function
+    func() # ==hello func
+    print('*********') # enhancement to the function
   return wrap_func()
 
-@my_decorator
+@my_decorator #super boost a function
 def hello():
   print('helllooooo')
 
