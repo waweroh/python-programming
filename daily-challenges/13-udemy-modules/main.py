@@ -1,4 +1,9 @@
-import utility
-from shopping import shopping_cart
-print (utility.multiply(2,3))
-print(shopping_cart.buy('apples'))
+
+from utility import multiply
+from shopping.shopping_cart import buy
+
+if __name__ == '__main__':
+  print (multiply(2,3))
+  print(buy('apples'))
+
+ 
