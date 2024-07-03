@@ -9,7 +9,7 @@ class Student:
     self.index = index
     self.marks = marks
 
-  def subjects(self):
+  def subjects(self): 
     print('did all 6 subjects')
 
   def mark_list(self):
