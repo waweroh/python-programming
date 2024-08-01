@@ -18,11 +18,14 @@ while True:
     case 'add':
       todo = input('Enter a todo: ')
       todos.append(todo)
-    case 'show':
+    case 'show'| 'display':
       for item in todos:
+        item = item.capitalize() #manipulate the item
         print(item) #print each to do in new line not list
     case 'exit':
       break
+    case _:
+      print("You entered an unknown command.")
 
 print('bye !')
 
