@@ -6,10 +6,17 @@
 # length = len(text)
 # print ('the length of the title is : ', length)
 
-user_prompt = 'enter to do item: '
+# user_prompt = 'enter to do item: '
 
-todos = [] #set empty list outside the loo[]
-while True:
-  todo = input(user_prompt)
-  todos.append(todo) #method
-  print (todos)
+# todos = [] #set empty list outside the loo[]
+# while True:
+#   todo = input(user_prompt)
+#   todos.append(todo) #method
+#   print (todos)
+
+#incrementing a while loop
+x = 1
+
+while x <= 10:
+  print (x)
+  x += 1
