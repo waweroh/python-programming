@@ -19,9 +19,9 @@ while True:
       todo = input('Enter a todo: ')
       todos.append(todo)
     case 'show'| 'display':
-      for item in todos:
+      for index,item in enumerate(todos):
         item = item.capitalize() #manipulate the item
-        print(item) #print each to do in new line not list
+        print(index,'.',item) #print each to do in new line not list
 
     case 'edit': #change input to num, access items on list, replace an item 
       number = int(input('Number to edit: ')) #indexing num to edit
