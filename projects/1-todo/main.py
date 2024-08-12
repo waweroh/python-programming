@@ -68,8 +68,8 @@ while True:
       with open('todo.txt', 'r') as file:
         todos = file.readlines()
 
-      done = todos[number - 1]
-      print(f"task completed: {done}") 
+      done = todos[number - 1].strip('\n')
+      print(f"task completed and removed: {done}") 
       todos.pop(number - 1)#pop index not done
 
       with open('todo.txt','w') as file:
