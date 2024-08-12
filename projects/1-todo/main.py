@@ -33,15 +33,18 @@ while True:
       todos = file.readlines()
       file.close()
 
-      new_todos = []
-      for item in todos:
-        new_item = item.strip('\n')
-        new_todos.append(new_item)
+      # new_todos = []
+      # for item in todos:
+      #   new_item = item.strip('\n')
+      #   new_todos.append(new_item)
+
+      #new_todos = [item.strip('\n') for item in new_todos] #list comprehension
       
 
-      for index,item in enumerate(new_todos):
+      for index,item in enumerate(todos):
         item = item.capitalize() #manipulate the item
         # index += 1 
+        item = item.strip('\n') #stripping the new line
         row = f"{index + 1}-{item}"
         print(row) #print each to do in new line not list
 
