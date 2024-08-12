@@ -10,9 +10,13 @@ def greet_softer(name):
 
 def hello(other_fun, name):
   print('This is display() function')
-  other_fun(name) #here we are executing the function taken as a parameter
-hello(greet_louder,'Moses')
-hello(greet_softer,'Sophie')
+  return lambda: other_fun(name) #here we are executing the function taken as a parameter
+greet_1 = hello(greet_louder,'Moses')
+greet_2 = hello(greet_softer,'Sophie')
+
+greet_1()
+greet_2()
+
 
 def hello(name):
   print('hello has been executed')
