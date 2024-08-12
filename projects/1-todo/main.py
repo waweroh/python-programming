@@ -18,21 +18,19 @@ while True:
     case 'add':
       todo = input('Enter a todo: ') + '\n'
 
-      file = open('todo.txt', 'r')
-      todos = file.readlines()
-      file.close()
+      with open('todo.txt', 'r') as file:
+        todos = file.readlines()
 
       todos.append(todo)
 
-      file = open('todo.txt', 'w')
-      file.writelines(todos)
-      file.close()
+      with open('todo.txt', 'w') as file:
+        file.writelines(todos)
+      
 
     case 'show'| 'display':
-      file = open('todo.txt', 'r')
-      todos = file.readlines()
-      file.close()
-
+      with open('todo.txt', 'r') as file:
+        todos = file.readlines()
+      
       # new_todos = []
       # for item in todos:
       #   new_item = item.strip('\n')
@@ -51,18 +49,31 @@ while True:
     case 'edit': #change input to num, access items on list, replace an item 
       number = int(input('Number to edit: ')) #indexing num to edit
       number -= 1
+
+      with open('todo.txt', 'r') as file:
+        todos = file.readlines()
+
       existing_todo = todos[number]
       print (existing_todo) # display what to edit
+
       new_todo = input('Enter new todo: ') #new input
-      todos[number] = new_todo #replace
+      todos[number] = new_todo + '\n' #replace
+
+      with open('todo.txt', 'w') as file:
+        file.writelines(todos)
+
     case 'completed':
       number = int(input('completed this task: '))
       # number -= 1 
+      with open('todo.txt', 'r') as file:
+        todos = file.readlines()
+
       done = todos[number - 1]
       print(f"task completed: {done}") 
-      todos.pop(number - 1) #pop index not done
+      todos.pop(number - 1)#pop index not done
 
-      
+      with open('todo.txt','w') as file:
+        file.writelines(todos)
       
     case 'exit':
       break
