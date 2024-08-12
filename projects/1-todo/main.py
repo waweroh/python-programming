@@ -36,8 +36,9 @@ while True:
       number = int(input('completed this task: '))
       # number -= 1 
       done = todos[number - 1]
-      print(done)
-      todos.pop(number)
+      print(f"task completed: {done}") 
+      todos.pop(number - 1) #pop index not done
+      
       
       
     case 'exit':
@@ -46,6 +47,8 @@ while True:
       print("You entered an unknown command.")
 
 print('bye !')
+# print(dir(list))
+# print(help(list.extend))
 
 
 
