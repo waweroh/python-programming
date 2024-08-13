@@ -15,7 +15,7 @@ while True:
   user_action = user_action.strip() #remove whitespaces
 
   
-  if 'add' in user_action:
+  if user_action.startswith('add'):
     todo = user_action[4:]
 
     with open('todo.txt', 'r') as file:
@@ -27,7 +27,7 @@ while True:
       file.writelines(todos)
     
 
-  elif 'show' in user_action or 'display' in user_action:
+  elif user_action.startswith('show') or  user_action.startswith('display'):
     with open('todo.txt', 'r') as file:
       todos = file.readlines()
     
@@ -46,7 +46,7 @@ while True:
       row = f"{index + 1}-{item}"
       print(row) #print each to do in new line not list
 
-  elif 'edit' in user_action: 
+  elif user_action.startswith('edit'): 
     number = int(user_action[5:]) #indexing num to edit
     number -= 1 #to access the true index ie. todo 2 is index 1
 
@@ -62,7 +62,7 @@ while True:
     with open('todo.txt', 'w') as file:
       file.writelines(todos)
 
-  elif 'completed' in user_action:
+  elif user_action.startswith("completed"):
     number = int(user_action[10:])
     # number -= 1 
     with open('todo.txt', 'r') as file:
@@ -75,12 +75,13 @@ while True:
     with open('todo.txt','w') as file:
       file.writelines(todos)
     
-  elif 'exit' in user_action:
+  elif user_action.startswith("exit"):
     break
   else:
     print("You entered an unknown command.")
-
+  
 print('bye !')
+
 # print(dir(list))
 # print(help(list.extend))
 
