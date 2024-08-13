@@ -47,33 +47,41 @@ while True:
       print(row) #print each to do in new line not list
 
   elif user_action.startswith('edit'): 
-    number = int(user_action[5:]) #indexing num to edit
-    number -= 1 #to access the true index ie. todo 2 is index 1
+    try:
+      number = int(user_action[5:]) #indexing num to edit
+      number -= 1 #to access the true index ie. todo 2 is index 1
 
-    with open('todo.txt', 'r') as file:
-      todos = file.readlines()
+      with open('todo.txt', 'r') as file:
+        todos = file.readlines()
 
-    existing_todo = todos[number]
-    print (existing_todo) # display what to edit
+      existing_todo = todos[number]
+      print (existing_todo) # display what to edit
 
-    new_todo = input('Enter new todo: ') #new input
-    todos[number] = new_todo + '\n' #replace
+      new_todo = input('Enter new todo: ') #new input
+      todos[number] = new_todo + '\n' #replace
 
-    with open('todo.txt', 'w') as file:
-      file.writelines(todos)
+      with open('todo.txt', 'w') as file:
+        file.writelines(todos)
+    except ValueError:
+      print('Command is not valid.')
+      continue
 
   elif user_action.startswith("completed"):
-    number = int(user_action[10:])
-    # number -= 1 
-    with open('todo.txt', 'r') as file:
-      todos = file.readlines()
+    try:
+      number = int(user_action[10:])
+      # number -= 1 
+      with open('todo.txt', 'r') as file:
+        todos = file.readlines()
 
-    done = todos[number - 1].strip('\n')
-    print(f"task completed and removed: {done}") 
-    todos.pop(number - 1)#pop index not done
+      done = todos[number - 1].strip('\n')
+      print(f"task completed and removed: {done}") 
+      todos.pop(number - 1)#pop index not done
 
-    with open('todo.txt','w') as file:
-      file.writelines(todos)
+      with open('todo.txt','w') as file:
+        file.writelines(todos)
+    except IndexError:
+      print('Enter a valid task number. Thank you.')
+      continue
     
   elif user_action.startswith("exit"):
     break
