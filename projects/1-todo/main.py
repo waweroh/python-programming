@@ -9,6 +9,16 @@
 
 
 # todos = [] #set empty list outside the loop
+def get_todos():
+  with open('todo.txt', 'r') as file:
+    todos_local = file.readlines()
+  return todos_local
+
+# def write_todo():
+#   with open('todo.txt', 'w') as file:
+#     file.writelines()
+    
+
 
 while True:
   user_action = input('type add, edit,completed, show or exit: ')
@@ -18,19 +28,19 @@ while True:
   if user_action.startswith('add'):
     todo = user_action[4:]
 
-    with open('todo.txt', 'r') as file:
-      todos = file.readlines()
+    #purpose is to load existing list of todos into memory before adding 
+    #otherwise if we use empty list the tasks will disappear once we close the program.
+    todos = get_todos()
 
-    todos.append(todo)
+    todos.append(todo + '\n')
 
     with open('todo.txt', 'w') as file:
       file.writelines(todos)
     
 
   elif user_action.startswith('show') or  user_action.startswith('display'):
-    with open('todo.txt', 'r') as file:
-      todos = file.readlines()
     
+    todos = get_todos()
     # new_todos = []
     # for item in todos:
     #   new_item = item.strip('\n')
@@ -51,8 +61,7 @@ while True:
       number = int(user_action[5:]) #indexing num to edit
       number -= 1 #to access the true index ie. todo 2 is index 1
 
-      with open('todo.txt', 'r') as file:
-        todos = file.readlines()
+      todos = get_todos()
 
       existing_todo = todos[number]
       print (existing_todo) # display what to edit
@@ -70,8 +79,7 @@ while True:
     try:
       number = int(user_action[10:])
       # number -= 1 
-      with open('todo.txt', 'r') as file:
-        todos = file.readlines()
+      todos = get_todos()
 
       done = todos[number - 1].strip('\n')
       print(f"task completed and removed: {done}") 
