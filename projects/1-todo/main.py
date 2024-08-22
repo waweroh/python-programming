@@ -9,7 +9,7 @@
 
 
 # todos = [] #set empty list outside the loop
-def get_todos():
+def get_todos(filepath):
   with open('todo.txt', 'r') as file:
     todos_local = file.readlines()
   return todos_local
@@ -30,7 +30,7 @@ while True:
 
     #purpose is to load existing list of todos into memory before adding 
     #otherwise if we use empty list the tasks will disappear once we close the program.
-    todos = get_todos()
+    todos = get_todos('todo.txt')
 
     todos.append(todo + '\n')
 
@@ -40,7 +40,7 @@ while True:
 
   elif user_action.startswith('show') or  user_action.startswith('display'):
     
-    todos = get_todos()
+    todos = get_todos('todo.txt')
     # new_todos = []
     # for item in todos:
     #   new_item = item.strip('\n')
@@ -61,7 +61,7 @@ while True:
       number = int(user_action[5:]) #indexing num to edit
       number -= 1 #to access the true index ie. todo 2 is index 1
 
-      todos = get_todos()
+      todos = get_todos('todo.txt')
 
       existing_todo = todos[number]
       print (existing_todo) # display what to edit
@@ -79,7 +79,7 @@ while True:
     try:
       number = int(user_action[10:])
       # number -= 1 
-      todos = get_todos()
+      todos = get_todos('todo.txt')
 
       done = todos[number - 1].strip('\n')
       print(f"task completed and removed: {done}") 
@@ -97,7 +97,6 @@ while True:
     print("You entered an unknown command.")
   
 print('bye !')
-
 # print(dir(list))
 # print(help(list.extend))
 
