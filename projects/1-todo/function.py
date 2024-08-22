@@ -1,10 +1,10 @@
-def greet():
-  message = 'hello'
+def greet(message): # parameter
   new_message = message.capitalize()
-  print('Hellooo')
+  print('Hello')
   return new_message
 
-greeting = greet()
+user_entry = input('what greeting do you want ')
+greeting = greet(user_entry) #function takes argument
 print(greeting)
 
 # function must have a return value
