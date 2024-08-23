@@ -10,13 +10,13 @@
 
 # todos = [] #set empty list outside the loop
 def get_todos(filepath):
-  with open('todo.txt', 'r') as file:
+  with open(filepath, 'r') as file:
     todos_local = file.readlines()
   return todos_local
 
-# def write_todo():
-#   with open('todo.txt', 'w') as file:
-#     file.writelines()
+def write_todo(filepath, todos_arg):
+  with open(filepath, 'w') as file:
+    file.writelines(todos_arg)
     
 
 
@@ -34,8 +34,7 @@ while True:
 
     todos.append(todo + '\n')
 
-    with open('todo.txt', 'w') as file:
-      file.writelines(todos)
+    write_todo('todo.txt', todos)
     
 
   elif user_action.startswith('show') or  user_action.startswith('display'):
@@ -69,8 +68,7 @@ while True:
       new_todo = input('Enter new todo: ') #new input
       todos[number] = new_todo + '\n' #replace
 
-      with open('todo.txt', 'w') as file:
-        file.writelines(todos)
+      write_todo('todo.txt', todos)
     except ValueError:
       print('Command is not valid.')
       continue
@@ -85,8 +83,7 @@ while True:
       print(f"task completed and removed: {done}") 
       todos.pop(number - 1)#pop index not done
 
-      with open('todo.txt','w') as file:
-        file.writelines(todos)
+      write_todo('todo.txt', todos)
     except IndexError:
       print('Enter a valid task number. Thank you.')
       continue
