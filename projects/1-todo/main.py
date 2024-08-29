@@ -10,18 +10,11 @@
 
 # todos = [] #set empty list outside the loop
 
-from main_func import get_todos, write_todo
+import main_func
+import time # python module index
 
-def get_todos(filepath='todo.txt'):
-  with open(filepath, 'r') as file:
-    todos_local = file.readlines()
-  return todos_local
-
-def write_todo(todos_arg,filepath='todo.txt'):
-  with open(filepath, 'w') as file:
-    file.writelines(todos_arg)
-    
-
+now = time.strftime('%b %d, %Y %H:%M:%S')
+print('It is:', now)
 
 while True:
   user_action = input('type add, edit,completed, show or exit: ')
@@ -33,16 +26,16 @@ while True:
 
     #purpose is to load existing list of todos into memory before adding 
     #otherwise if we use empty list the tasks will disappear once we close the program.
-    todos = get_todos()
+    todos = main_func.get_todos()
 
     todos.append(todo + '\n')
 
-    write_todo(todos)
+    main_func.write_todo(todos)
     
 
   elif user_action.startswith('show') or  user_action.startswith('display'):
     
-    todos = get_todos('todo.txt')
+    todos = main_func.get_todos()
     # new_todos = []
     # for item in todos:
     #   new_item = item.strip('\n')
@@ -63,7 +56,7 @@ while True:
       number = int(user_action[5:]) #indexing num to edit
       number -= 1 #to access the true index ie. todo 2 is index 1
 
-      todos = get_todos('todo.txt')
+      todos = main_func.get_todos()
 
       existing_todo = todos[number]
       print (existing_todo) # display what to edit
@@ -71,7 +64,7 @@ while True:
       new_todo = input('Enter new todo: ') #new input
       todos[number] = new_todo + '\n' #replace
 
-      write_todo(todos)
+      main_func.write_todo(todos)
     except ValueError:
       print('Command is not valid.')
       continue
@@ -80,13 +73,13 @@ while True:
     try:
       number = int(user_action[10:])
       # number -= 1 
-      todos = get_todos('todo.txt')
+      todos = main_func.get_todos()
 
       done = todos[number - 1].strip('\n')
       print(f"task completed and removed: {done}") 
       todos.pop(number - 1)#pop index not done
 
-      write_todo(todos)
+      main_func.write_todo(todos)
     except IndexError:
       print('Enter a valid task number. Thank you.')
       continue
