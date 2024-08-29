@@ -9,6 +9,9 @@
 
 
 # todos = [] #set empty list outside the loop
+
+from main_func import get_todos, write_todo
+
 def get_todos(filepath='todo.txt'):
   with open(filepath, 'r') as file:
     todos_local = file.readlines()
@@ -96,6 +99,8 @@ while True:
 print('bye !')
 # print(dir(list))
 # print(help(list.extend))
+print(__name__) # main_func
+
 
 
 
