@@ -67,7 +67,9 @@ while True:
       main_func.write_todo(todos)
     except ValueError:
       print('Command is not valid.')
-      continue
+    except IndexError:
+      print('Your index is not a valid index')
+    continue
 
   elif user_action.startswith("completed"):
     try:
