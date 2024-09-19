@@ -1,47 +1,68 @@
-todos = []
+# todos = [] the list that stores todo list
 while True:
-  user_action = input('type add, show, complete, edit or exit: ' )
-
+  user_action = input('type add,show,edit,complete,exit: ')
 
   if 'add' in user_action:
+    todo = input('enter todo task: ') + '\n'
 
-    todo = input('enter todo task: ')
+    with open('todo2.txt', 'r') as file:
+      todos = file.readlines()#opens the file in lines
+
     todos.append(todo)
-    # print(todos)
+
+    with open('todo2.txt', 'w') as file:
+      file.writelines(todos)
+      
 
   elif 'show' in user_action:
-    for index, item in enumerate(todos):
-      item = item.capitalize()
-      row = f'{index + 1}-{item}'
-      print (row)
+    with open('todo2.txt', 'r') as file:
+      todos = file.readlines()
 
+    for index,item in enumerate(todos):
+      item = item.capitalize()
+      item = item.strip('\n')
+      row = f'{index + 1}-{item}' 
+      print(row)
+  
   elif 'edit' in user_action:
-    number = int(input('Enter number to edit: '))
+    number = int(input('enter todo task number: '))
     number -= 1
+
+    with open('todo2.txt', 'r') as file:
+      todos = file.readlines()
 
     changing_todo = todos[number]
     print(changing_todo)
 
-    new_todo = input('Enter new todo: ')
-    todos[number] = new_todo
-    print(new_todo)
+    new_todo = input('enter modified todo task number: ')
+    todos[number] = new_todo + '\n'
+
+    with open ('todo2.txt', 'w') as file:
+      file.writelines(todos)
+    
   
   elif 'complete' in user_action:
-    number = int(input('Enter number of task completed: '))
-    number -=1 #  get index the done task
+    number = int(input('enter the index of the completed task: '))
+    number -= 1
 
-    done_todo = todos[number] #get done task by assigning variable the index
-    print(f'task completed: {done_todo}')
+    with open('todo2.txt', 'r') as file:
+      todos = file.readlines()
 
-    todos.pop(number) #remove it
+    completed_task = todos[number]
+    print(f'task completed: {completed_task}')
+
+    todos.pop(number)
+
+    with open('todo2.txt', 'w') as file:
+      file.writelines(todos)
 
   elif 'exit' in user_action:
     break
-  
-  else:
-    print('You entered an unknown command')
 
-print('bye G !')
+  else:
+    print('You entered the wrong command')
+
+print('goodday G')
 
 
 
