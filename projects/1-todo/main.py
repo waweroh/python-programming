@@ -39,7 +39,7 @@ while True:
     # new_todos = []
     # for item in todos:
     #   new_item = item.strip('\n')
-    #   new_todos.append(new_item)
+    #   new_todos.append(new_item):
 
     #new_todos = [item.strip('\n') for item in new_todos] #list comprehension
     
