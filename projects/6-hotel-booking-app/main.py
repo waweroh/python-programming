@@ -30,4 +30,6 @@ if hotel.available():
   name = input('Enter your name: ')
   reservation_ticket = ReservationTicket(name, hotel) #instance of the ticket object
   reservation_ticket.generate() #the instance points to the generate method to get the ticket
+else:
+  print('Hotel not available')
 
