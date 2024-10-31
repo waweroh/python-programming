@@ -9,6 +9,9 @@ class Hotel:
   def book(self):
     pass
 
+  def available(self):
+    pass
+
 
 class ReservationTicket:
   def generate(self):
@@ -18,3 +21,6 @@ class ReservationTicket:
 print(df)
 id = input ('Enter the id of the Hotel: ')
 hotel = Hotel(id)
+
+if hotel.available():
+  hotel.book()
