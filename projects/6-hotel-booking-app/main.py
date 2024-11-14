@@ -1,6 +1,7 @@
 import pandas
 
 df = pandas.read_csv('hotels.csv', dtype={'id': str})
+df_cards = pandas.read_csv('cards.csv', dtype=str).to_dict(orient='records')
 
 class Hotel:
   def __init__(self, hotel_id):
@@ -35,6 +36,18 @@ class ReservationTicket:
     Hotel name: {self.hotel.name}
     '''
     return content
+  
+class CreditCard:
+  def __init__(self, number):
+    self.number = number
+
+  def validate(self, expiration, holder, cvc):
+    card_data = {'number':self.number, 'expiration':expiration, 
+                 'holder':holder, 'cvc':cvc}
+    if card_data in df_cards:
+      return True
+    else:
+      return False
 
 #program main loop or instances of the classes
 print(df)
@@ -42,10 +55,14 @@ hotel_ID = input ('Enter the id of the Hotel: ')
 hotel = Hotel(hotel_ID)
 
 if hotel.available():
-  hotel.book()
-  name = input('Enter your name: ')
-  reservation_ticket = ReservationTicket(customer_name=name, hotel_object=hotel) #instance of the ticket object
-  print(reservation_ticket.generate()) #the instance points to the generate method to get the ticket
+  credit_card = CreditCard(number='1234567890123456')
+  if credit_card.validate(expiration='12/26', holder='Moses Waweru', cvc='123'):
+    hotel.book()
+    name = input('Enter your name: ')
+    reservation_ticket = ReservationTicket(customer_name=name, hotel_object=hotel) #instance of the ticket object
+    print(reservation_ticket.generate()) #the instance points to the generate method to get the ticket
+  else:
+    print ('problem with payment')
 else:
   print('Hotel not available')
 
