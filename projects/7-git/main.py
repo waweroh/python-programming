@@ -3,6 +3,7 @@ import sys
 
 def main():
     if check_reboot():
+        pass
         print("Pending Reboot.")
         sys.exit(1)
 
