@@ -8,6 +8,6 @@ def main():
         sys.exit(1)
 
     print("Everything is ok.")
-    sys.exit(0)
+    sys.exit(1)
 
 main()
