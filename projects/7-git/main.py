@@ -9,5 +9,7 @@ def main():
 
     print("Everything is ok.")
     sys.exit(0)
+    SystemError
+    staticmethod(main)
 
 main()
