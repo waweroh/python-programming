@@ -1,7 +1,3 @@
-import os
-import sys
-
-def main():
-   print ('everything is ok')
-
+def main ():
+  '''function to check if program is working'''
 main()
