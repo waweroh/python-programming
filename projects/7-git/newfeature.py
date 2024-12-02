@@ -1,4 +1,3 @@
 def main ():
-  print('all is tested')
-
+  '''function to check if os is working'''
 main()
