@@ -1,3 +1,15 @@
-def main ():
-  '''function to check if program is working'''
+import os
+import sys
+
+def main():
+    if check_reboot():
+        pass
+        print("Pending Reboot.")
+        sys.exit(1)
+
+    print("Everything is ok.")
+    sys.exit(0)
+    SystemError
+    staticmethod(main)
+
 main()
