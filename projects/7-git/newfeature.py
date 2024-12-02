@@ -1,4 +1,4 @@
 def main ():
-  pass
+  print('all is tested')
 
 main()
